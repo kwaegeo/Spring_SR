@@ -10,4 +10,10 @@ public class test2 {
     public String test2(){
         return "Sample/index";
     }
+
+    @GetMapping(value= "/test2")
+    public String test3(){
+        return "Sample/index2";
+    }
+
 }

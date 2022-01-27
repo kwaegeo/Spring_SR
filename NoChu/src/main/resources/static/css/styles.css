@@ -4622,6 +4622,13 @@ textarea.form-control-lg {
   border-bottom-left-radius: calc(0.25rem - 1px);
 }
 
+.card-img,
+.card-img-left {
+  border-left-left-radius: calc(0.25rem - 1px);
+  border-left-right-radius: calc(0.25rem - 1px);
+}
+
+
 .card-group > .card {
   margin-bottom: 0.75rem;
 }
@@ -11285,4 +11292,9 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+
+    .card-horizontal {
+        display: flex;
+        flex: 1 1 auto;
+    }
 }
