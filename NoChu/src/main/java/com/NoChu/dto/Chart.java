@@ -11,14 +11,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Chart {
 
-    int rank;
+    int Rank;
 
-    String Artist;
+    String AlbumImg;
 
     String SongName;
 
-    String Album;
-
-    String imgCover;
+    String Artist;
 
 }
