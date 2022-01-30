@@ -6747,6 +6747,10 @@ textarea.form-control-lg {
   display: flex !important;
 }
 
+.d-flex2{
+  display: flex;
+  justify-content: center;
+}
 .d-inline-flex {
   display: inline-flex !important;
 }

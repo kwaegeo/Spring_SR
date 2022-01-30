@@ -1,5 +1,6 @@
 package com.NoChu.controller;
 
+import com.NoChu.service.API_service.Crawling;
 import com.NoChu.service.chartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,10 +13,13 @@ public class mainController {
     @Autowired
     private chartService chartservice;
 
+    @Autowired
+    private Crawling crawling;
+
     @GetMapping("/")
     public String mainpage(Model model){
-        model.addAttribute("Chart", chartservice.국십());
-
+        model.addAttribute("Kpop", crawling.kpop십곡());
+        model.addAttribute("pop",crawling.pop십곡());
         return "Sample/index2";
     }
 }

@@ -1,7 +1,7 @@
 package com.NoChu.service;
 
-import com.NoChu.controller.Api.Crawling;
 import com.NoChu.dto.Chart;
+import com.NoChu.service.API_service.Crawling;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,8 +15,8 @@ public class chartService {
     @Autowired
     private Crawling crawling;
 
-    public List<Chart> 국십(){
+    public List<Chart> crawl(){
 
-        return crawling.목록();
+        return crawling.kpop십곡();
     }
 }
