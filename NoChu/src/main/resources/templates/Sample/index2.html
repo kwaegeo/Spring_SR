@@ -8,30 +8,35 @@
 </th:block>
 <div layout:fragment="content">
 
+
+    <!-- Section-->
     <div class="d-flex2">
-        <!-- Section-->
         <section class="py-5">
+            <h5 class="h5-cookie">KPOP-Chart Top10</h5>
             <div class="container px-4 px-lg-5 mt-5" th:each="CH, status: ${Kpop}">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center ">
+                <div class="row justify-content-center ">
                     <div class="col mb-1">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-left" th:src="${CH.AlbumImg}" alt="..."/>
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h6 class="fw-bolder" th:text="${CH.Rank}"></h6>
+                        <div class="row justify-content-center">
+                            <div class="card h-40 w-40">
+                                <!-- Product image-->
+                                <img class="card-img-left" th:src="${CH.AlbumImg}" alt="..."/>
+                                <!-- Product details-->
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <!-- Product name-->
+                                        <h6 class="fw-bolder" th:text="${CH.Rank}"></h6>
 
-                                    <h5 class="fw-bolder" th:text="${CH.SongName}"></h5>
+                                        <h5 class="fw-bolder" th:text="${CH.SongName}"></h5>
 
-                                    <h4 th:text="${CH.Artist}"></h4>
+                                        <h4 th:text="${CH.Artist}"></h4>
 
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">노래 듣기</a>
+                                <!-- Product actions-->
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto"
+                                                                href="/music/${CH.SongName}">노래 듣기</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -40,27 +45,31 @@
             </div>
         </section>
         <section class="py-5">
+            <h5 class="h5-cookie">POP-Chart Top10</h5>
             <div class="container px-4 px-lg-5 mt-5" th:each="P, status: ${pop}">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center ">
+                <div class="row justify-content-center ">
                     <div class="col mb-1">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-left" th:src="${P.AlbumImg}" alt="..."/>
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h6 class="fw-bolder" th:text="${P.Rank}"></h6>
+                        <div class="row justify-content-center">
+                            <div class="card h-40 w-40">
+                                <!-- Product image-->
+                                <img class="card-img-left" th:src="${P.AlbumImg}" alt="..."/>
+                                <!-- Product details-->
+                                <div class="card-body p-4">
+                                    <div class="text-center">
+                                        <!-- Product name-->
+                                        <h6 class="fw-bolder" th:text="${P.Rank}"></h6>
 
-                                    <h5 class="fw-bolder" th:text="${P.SongName}"></h5>
+                                        <h5 class="fw-bolder" th:text="${P.SongName}"></h5>
 
-                                    <h4 th:text="${P.Artist}"></h4>
+                                        <h4 th:text="${P.Artist}"></h4>
 
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">노래 듣기</a>
+                                <!-- Product actions-->
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto"
+                                                                href="/music/${P.SongName}">노래 듣기</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

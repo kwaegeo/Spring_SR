@@ -16,8 +16,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"/>
     <!-- Core theme CSS (includes Bootstrap)-->
 
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <th:block layout:fragment="script"></th:block>
+    <script type="text/javascript" th:src="@{/js/scripts.js}"></script>
+
 </head>
 <body>
+
     <div th:replace="fragments/header::header"></div>  <!-- 선언된 html태그를 다른 파일로 치환하는 것 -->
 
     <div layout:fragment="content">  <!-- layout에서 변경되는 영역을 fragment로 설정 앞으로 구현되어질 영역 -->
@@ -30,7 +36,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <!--<script src="js/scripts.js"></script>-->
-    <script type="text/javascript" th:src="@{/js/scripts.js}"></script>
 
 
 <!-- header와 마찬가지로 fragments폴더의 footer파일의 th:fragments=footer영역을 가져온다.-->

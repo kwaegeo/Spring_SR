@@ -5,3 +5,15 @@
 */
 // This file is intentionally blank
 // Use this file to add JavaScript to your project
+
+//추가 js
+
+$(document).ready(function(){
+
+    var select = $("select#color");
+
+    select.change(function(){
+        var select_name = $(this).children("option:selected").text();
+        $(this).siblings("label").text(select_name);
+    });
+});

@@ -70,6 +70,54 @@
   box-sizing: border-box;
 }
 
+/*새로만든 css*/
+
+div#select_box {
+    position: relative;
+    border-radius: 10px;
+    width:  120px;
+    height: 48px;
+    background-image: url(select_icon.png);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+    border: 1px solid #C1FF6B;
+}
+div#select_box label {
+    position: absolute;
+    font-size: 18px;
+    color: #C1FF6B;
+    top: 13px;
+    left: 12px;
+    letter-spacing: 1px;
+    font-family: cookie;
+}
+div#select_box select#color {
+    width: 100%;
+    height: 48px;
+    min-height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    opacity: 0;
+    filter: alpha(opacity=0); /* IE 8 */
+}
+
+div#select_box select#color option{
+    position: absolute;
+    font-size: 16px;
+    color: #C1FF6B;
+    top: 13px;
+    left: 12px;
+    letter-spacing: 1px;
+    font-family: cookie;
+    background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+}
+
+@font-face{
+    font-family: cookie;
+    src: url("../font/CookieRun_Regular.ttf");
+}
+
+
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;
@@ -146,6 +194,12 @@ h4, .h4 {
 
 h5, .h5 {
   font-size: 1.25rem;
+}
+
+.h5-cookie{
+  font-size: 1.25rem;
+  font-family: cookie;
+  font-style: cookie;
 }
 
 h6, .h6 {
@@ -3032,6 +3086,9 @@ textarea.form-control-lg {
   color: #fff;
   background-color: #0d6efd;
   border-color: #0d6efd;
+  font-family: cookie;
+  text-align: center;
+  height: 48px;
 }
 .btn-primary:hover {
   color: #fff;
@@ -6960,6 +7017,10 @@ textarea.form-control-lg {
   width: 50% !important;
 }
 
+.w-40 {
+  width: 40% !important;
+}
+
 .w-75 {
   width: 75% !important;
 }
@@ -6986,6 +7047,10 @@ textarea.form-control-lg {
 
 .h-25 {
   height: 25% !important;
+}
+
+.h-40 {
+  height: 40% !important;
 }
 
 .h-50 {
@@ -7504,6 +7569,7 @@ textarea.form-control-lg {
 .py-5 {
   padding-top: 3rem !important;
   padding-bottom: 3rem !important;
+  text-align:center;
 }
 
 .pt-0 {
@@ -11301,4 +11367,6 @@ textarea.form-control-lg {
         display: flex;
         flex: 1 1 auto;
     }
+
+
 }

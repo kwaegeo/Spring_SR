@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org">
 <!-- 타임리프 문법을 사용하기 위해 추가 -->
-
 
 <div th:fragment="header">
 
@@ -40,6 +39,14 @@
                     <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
                         <!-- Email address input-->
                         <div class="row">
+                            <div id="select_box">
+                                <label for="color">선택</label>
+                                <select id="color" title="▼">
+                                    <option selected="selected">가수명</option>
+                                    <option>제목 명</option>
+                                    <option>이재명</option>
+                                </select>
+                            </div>
                             <div class="col">
                                 <input class="form-control form-control-lg" type="text">
                             </div>
