@@ -22,4 +22,9 @@ public class mainController {
         model.addAttribute("pop",crawling.pop십곡());
         return "Sample/index2";
     }
+
+    @GetMapping("/test23")
+    public String testt(){
+        return "Sample/musicdetail";
+    }
 }

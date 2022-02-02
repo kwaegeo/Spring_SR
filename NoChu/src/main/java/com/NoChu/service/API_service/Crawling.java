@@ -2,6 +2,7 @@ package com.NoChu.service.API_service;
 
 import com.NoChu.dto.Chart;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -30,10 +31,10 @@ public class Crawling {
     private String albumImg;
     private String songName;
     private String artist;
+    private String videourl;
 
 
-
-    public WebDriver setup(){
+    private WebDriver setup(){
         System.setProperty(WEB_DRIVER_ID, WEB_DRIVER_PATH);
 
         //Options Setting
@@ -134,8 +135,7 @@ public class Crawling {
                 webElement = driver.findElement(By.xpath("/html/body/div/div[3]/div/div/div[7]/form/div/table/tbody/tr["+i+"]/td[5]/div/div/div[2]/a"));
                 artist= webElement.getText();
 
-//                         /html/body/div/div[3]/div/div/div[7]/form/div/table/tbody/tr[1]/td[5]/div/div/div[2]/a[1]
-//                        /html/body/div/div[3]/div/div/div[7]/form/div/table/tbody/tr[2]/td[5]/div/div/div[2]/a
+
                 System.out.println("가수");
                 System.out.println(albumImg);
                 System.out.println(artist);
@@ -160,8 +160,51 @@ public class Crawling {
     }
 
 
+    public String 노래듣기(String SongName, String Artist){
+
+        driver = setup();
+
+        //주소설정
+        base_url = "https://www.youtube.com/results?search_query="+SongName+Artist;
+        //연결
+        driver.get(base_url);
+
+        System.out.println("유튜브접속");
+        try{
+                System.out.println(SongName +" "+Artist);
+                //검색 필드 탐색
+
+//                driver.findElement(By.xpath("/html/body/ytd-app/div/div/ytd-masthead/div[3]/div[2]/ytd-searchbox/button")).click();
+//                System.out.println("검색 버튼 클릭");
+
+                driver.findElement(By.xpath("//*[@id=\"video-title\"]/yt-formatted-string")).click();
+                //driver.findElement(By.xpath("/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[5]/div[1]/div/div[1]/div/div/div/ytd-player/div/div/div[25]/div[2]/div[1]/button")).click();
+                //driver.findElement(By.xpath("/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[5]/div[1]/div/div[8]/div[2]/ytd-video-primary-info-renderer/div/div/div[3]/div/ytd-menu-renderer/div/ytd-button-renderer[1]/a/yt-formatted-string")).click();
+
+                Thread.sleep(1000);
+
+                driver.findElement(By.cssSelector("body")).sendKeys(Keys.SPACE);
+
+                //webElement = driver.findElement(By.xpath("/html/head/meta[20]"));
+            //String url = driver.getCurrentUrl();
 
 
+                System.out.println("여까지와");
+                String orivideourl = driver.getCurrentUrl();
+                String vide = orivideourl.substring(32);                //https://www.youtube.com/watch?v=FCrMKhrFH7A
+                videourl = "https://www.youtube.com/embed/"+vide;
 
+                System.out.println(videourl);
+
+//*[@id="wpc-c4f60648-0946-4d2e-a889-c3082192c6f6"]/div[1]/div/div[1]/video
+
+           // head > link:nth-child(43)
+
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return videourl;
+    }
 
 }
