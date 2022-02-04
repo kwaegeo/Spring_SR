@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class mainController {
@@ -27,4 +28,11 @@ public class mainController {
     public String testt(){
         return "Sample/musicdetail";
     }
+
+    @GetMapping("/music/{SongName}/{Artist}")
+    public String searchmusic(Model model, @PathVariable String SongName, @PathVariable String Artist){
+        model.addAttribute("videourl",crawling.노래듣기(SongName, Artist));
+        return "/Sample/musicdetail";
+    }
+
 }
