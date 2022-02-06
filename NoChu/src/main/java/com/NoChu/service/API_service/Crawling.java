@@ -94,11 +94,13 @@ public class Crawling {
                 System.out.println(chart1);
 
                 chartList.add(chart1);
+
             }
 
         }catch(Exception e){
             e.printStackTrace();
         }
+        driver.quit();
         return chartList;
     }
 
@@ -151,11 +153,13 @@ public class Crawling {
                 System.out.println(chart1);
 
                 chartList.add(chart1);
+
             }
 
         }catch(Exception e){
             e.printStackTrace();
         }
+        driver.quit();
         return chartList;
     }
 
@@ -181,7 +185,7 @@ public class Crawling {
                 //driver.findElement(By.xpath("/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[5]/div[1]/div/div[1]/div/div/div/ytd-player/div/div/div[25]/div[2]/div[1]/button")).click();
                 //driver.findElement(By.xpath("/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[5]/div[1]/div/div[8]/div[2]/ytd-video-primary-info-renderer/div/div/div[3]/div/ytd-menu-renderer/div/ytd-button-renderer[1]/a/yt-formatted-string")).click();
 
-                Thread.sleep(1000);
+                Thread.sleep(500);
 
                 driver.findElement(By.cssSelector("body")).sendKeys(Keys.SPACE);
 
@@ -204,6 +208,7 @@ public class Crawling {
         }catch(Exception e){
             e.printStackTrace();
         }
+        driver.quit();
         return videourl;
     }
 

@@ -2,6 +2,7 @@ package com.NoChu.controller;
 
 import com.NoChu.service.API_service.Crawling;
 import com.NoChu.service.chartService;
+import com.NoChu.service.maniadbservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +14,9 @@ public class mainController {
 
     @Autowired
     private chartService chartservice;
+
+    @Autowired
+    private maniadbservice maniadbservice;
 
     @Autowired
     private Crawling crawling;
@@ -34,5 +38,12 @@ public class mainController {
         model.addAttribute("videourl",crawling.노래듣기(SongName, Artist));
         return "/Sample/musicdetail";
     }
+
+//    @GetMapping("/search")
+//    public String songsearch(Model model, @PathVariable String songorartist){
+//        model.addAttribute(maniadbservice.search(songorartist));
+//        return "/Sample/songsearch";
+//    }
+
 
 }
