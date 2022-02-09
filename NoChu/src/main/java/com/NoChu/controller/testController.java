@@ -25,7 +25,7 @@ public class testController {
 
         maniadbResponse= maniadbservice.searchManiadb(a);
 
-        System.out.println(maniadbResponse);
+//        System.out.println(maniadbResponse.getManiadbData().getResponseArtist());
 
         return a;
     }
