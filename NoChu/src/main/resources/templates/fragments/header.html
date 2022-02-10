@@ -36,19 +36,19 @@
         <div class="container position-relative">
             <div class="row justify-content-center">
                 <div class="col-xl-6">
-                    <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                    <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN" th:action="@{/search}" method="get">
                         <!-- Email address input-->
                         <div class="row">
                             <div id="select_box">
                                 <label for="color">선택</label>
                                 <select id="color" title="▼">
-                                    <option selected="selected">가수명</option>
-                                    <option>제목 명</option>
+                                    <option selected="selected" id ="artist">가수명</option>
+                                    <option id ="song">제목명</option>
                                     <option>이재명</option>
                                 </select>
                             </div>
                             <div class="col">
-                                <input class="form-control form-control-lg" type="text">
+                                <input class="form-control form-control-lg" type="text" name="SearchQuery" th:value="${value}"/>
                             </div>
                             <div class="col-auto">
                                 <button class="btn btn-primary" type="submit">검색</button>

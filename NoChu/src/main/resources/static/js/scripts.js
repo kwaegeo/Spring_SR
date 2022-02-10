@@ -15,6 +15,13 @@ $(document).ready(function(){
     select.change(function(){
         var select_name = $(this).children("option:selected").text();
         $(this).siblings("label").text(select_name);
+
+        if(select_name == "제목명"){
+            $("#contactForm").attr("action","Songsearch")
+        }
+        else if(select_name == "가수명"){
+            $("#contactForm").attr("action","search")
+        }
     });
 });
 

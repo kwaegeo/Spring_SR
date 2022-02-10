@@ -82,6 +82,7 @@ div#select_box {
     background-position: calc(100% - 10px) center;
     border: 1px solid #C1FF6B;
 }
+
 div#select_box label {
     position: absolute;
     font-size: 18px;
@@ -667,6 +668,12 @@ progress {
   max-width: 100%;
   height: auto;
 }
+
+.img-songsearch{
+  width: 60px;
+  height: 60px;
+}
+
 
 .figure {
   display: inline-block;

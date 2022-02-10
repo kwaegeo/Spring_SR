@@ -1,24 +1,26 @@
-package com.NoChu.model.ResponseModel;
+package com.NoChu.model.ResponseModel.SongXmlM;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 @JacksonXmlRootElement(localName = "maniadb:album")
-public class ManiaDbAlbumData {
+public class Album {
 
     @JacksonXmlProperty(localName = "title")
     private String title;
 
     @JacksonXmlProperty(localName = "image")
-    private String imageUrl;
+    private String image;
 
-    ManiaDbAlbumData(String title, String imageUrl) {
+    Album(String title, String image){
         this.title = title;
-        this.imageUrl = imageUrl;
+        this.image = image;
     }
+
 }

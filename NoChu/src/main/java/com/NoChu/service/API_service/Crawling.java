@@ -190,7 +190,7 @@ public class Crawling {
                 driver.findElement(By.cssSelector("body")).sendKeys(Keys.SPACE);
 
                 //webElement = driver.findElement(By.xpath("/html/head/meta[20]"));
-            //String url = driver.getCurrentUrl();
+                //String url = driver.getCurrentUrl();
 
 
                 System.out.println("여까지와");
@@ -199,11 +199,6 @@ public class Crawling {
                 videourl = "https://www.youtube.com/embed/"+vide;
 
                 System.out.println(videourl);
-
-//*[@id="wpc-c4f60648-0946-4d2e-a889-c3082192c6f6"]/div[1]/div/div[1]/video
-
-           // head > link:nth-child(43)
-
 
         }catch(Exception e){
             e.printStackTrace();

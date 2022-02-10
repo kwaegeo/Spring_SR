@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+
+<th:block layout:fragment="css">
+
+</th:block>
+<div layout:fragment="content">
+
+    <div class="container mt-3">
+        <h2>Responsive Table</h2>
+        <p>The .table-responsive class adds a scrollbar to the table when needed:</p>
+
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>AlbumCover</th>
+                    <th>Name</th>
+                    <th>Artist</th>
+                    <th>가사;</th>
+                </tr>
+                </thead>
+                <tbody th:each="Result, status: ${ResultList}">
+                <tr>
+                    <td><img class="img-songsearch" th:src="${Result.Album.image}" /></td>
+                    <td th:text="${Result.Album.title}"></td>
+                    <td th:text="${Result.Artist.name}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</html>
