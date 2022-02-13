@@ -207,4 +207,47 @@ public class Crawling {
         return videourl;
     }
 
+    public String 노래듣기(String title){
+
+        driver = setup();
+
+        //주소설정
+        base_url = "https://www.youtube.com/results?search_query="+title;
+        //연결
+        driver.get(base_url);
+
+        System.out.println("유튜브접속");
+        try{
+            System.out.println(title);
+            //검색 필드 탐색
+
+//                driver.findElement(By.xpath("/html/body/ytd-app/div/div/ytd-masthead/div[3]/div[2]/ytd-searchbox/button")).click();
+//                System.out.println("검색 버튼 클릭");
+
+            driver.findElement(By.xpath("//*[@id=\"video-title\"]/yt-formatted-string")).click();
+            //driver.findElement(By.xpath("/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[5]/div[1]/div/div[1]/div/div/div/ytd-player/div/div/div[25]/div[2]/div[1]/button")).click();
+            //driver.findElement(By.xpath("/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[5]/div[1]/div/div[8]/div[2]/ytd-video-primary-info-renderer/div/div/div[3]/div/ytd-menu-renderer/div/ytd-button-renderer[1]/a/yt-formatted-string")).click();
+
+            Thread.sleep(500);
+
+            driver.findElement(By.cssSelector("body")).sendKeys(Keys.SPACE);
+
+            //webElement = driver.findElement(By.xpath("/html/head/meta[20]"));
+            //String url = driver.getCurrentUrl();
+
+
+            System.out.println("여까지와");
+            String orivideourl = driver.getCurrentUrl();
+            String vide = orivideourl.substring(32);                //https://www.youtube.com/watch?v=FCrMKhrFH7A
+            videourl = "https://www.youtube.com/embed/"+vide;
+
+            System.out.println(videourl);
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        driver.quit();
+        return videourl;
+    }
+
 }

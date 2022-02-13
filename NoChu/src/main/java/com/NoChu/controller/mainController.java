@@ -9,7 +9,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class mainController {
@@ -33,6 +36,18 @@ public class mainController {
     @GetMapping("/music/{SongName}/{Artist}")
     public String MusicVideoSearch(Model model, @PathVariable String SongName, @PathVariable String Artist){
         model.addAttribute("videourl",crawling.노래듣기(SongName, Artist));
+        return "/Sample/musicdetail";
+    }
+
+    @GetMapping("/music2")
+    public String MusicVideoSearchSongName(Model model, @RequestParam("songinfo") String songinfo){
+
+        //input type의 값이 직접 정한 value값이 아닌 hidden과 같이 안에 있는 값은
+        //th:name으로 매핑을 해준 다음에 받아야한다.
+
+        System.out.println(songinfo);
+
+        model.addAttribute("videourl",crawling.노래듣기(songinfo));
         return "/Sample/musicdetail";
     }
 
