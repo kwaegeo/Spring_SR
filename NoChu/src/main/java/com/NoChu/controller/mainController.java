@@ -64,4 +64,9 @@ public class mainController {
 
 
     }
+
+    @GetMapping("/test3")
+    public String testest(){
+        return "Sample/GenreRecomm";
+    }
 }
